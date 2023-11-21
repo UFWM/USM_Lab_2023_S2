@@ -313,17 +313,25 @@ for i in range(len(listaD)):
 X = np.arange(0, 24, 24/len(listaD))
 
 #Datos importantes
-fluxSum=[]
+fluxSum, prodSum=[],[]
 fluxSum.append(sum(fluxNS)*24/len(fluxNS))
 fluxSum.append(sum(fluxSN)*24/len(fluxSN))
 fluxSum.append(sum(fluxSC)*24/len(fluxSC))
 fluxSum.append(sum(fluxCS)*24/len(fluxCS))
 fluxSum.append(sum(fluxNC)*24/len(fluxNC))
 fluxSum.append(sum(fluxCN)*24/len(fluxCN))
+prodSum.append(sum(prodN)*24/len(prodN))
+prodSum.append(sum(prodS)*24/len(prodS))
+prodSum.append(sum(prodC)*24/len(prodC))
 
-print("Costo total en el d\'ia: $",round(sum(objFunc)*24/len(listaD),2))
+print("Costo total:",round(sum(objFunc)*24/len(listaD),2),"$")
+print("Produccion total:",round(sum(prodSum),2),"[MW]")
 print("Flujo total:",round(sum(fluxSum),2),"[MW]")
 print("Energia perdida en flujo:", round(sum(fluxSum)*r,2),"[MW]")
+print("====Desglose producciones====")
+print("Produccion total Norte:",round(prodSum[0],2),"[MW]")
+print("Produccion total Sur:",round(prodSum[1],2),"[MW]")
+print("Produccion total Centro:",round(prodSum[2],2),"[MW]")
 print("=====Desglose flujos=====")
 print("Flujo total NS:",round(fluxSum[0],2),"[MW]")
 print("Flujo total SN:",round(fluxSum[1],2),"[MW]")
