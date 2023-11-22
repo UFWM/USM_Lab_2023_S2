@@ -269,10 +269,17 @@ pondNSC=[0.3,0.1,0.6]
 n=12
 #var : Porcentaje de variacion de los datos aplicada a la interpolacion
 var=0.02
+#Q : Produccion maxima en cada zona
+Q=[6000,2000,12000]
+#p : Porcentaje de aporte de las tres tecnologias en cada zona
+p=[[0.3,0.3,0.4],[0.1,0.4,0.5],[0.2,0.1,0.7]]
+#C: Costo de produccion de 1[MW] de energia de cada tecnologia en cada zona
+C=[[0,40,80],[0,40,80],[0,40,80]]
+
 #====================
 
 #Arreglos
-resultado, listaD, Q, p, C=[], [], [6000,2000,12000], [[0.3,0.3,0.4],[0.1,0.4,0.5],[0.2,0.1,0.7]], [[0,40,80],[0,40,80],[0,40,80]]
+resultado, listaD= [], []
 
 #Calculo interpolacion
 promInterpolN=sum(interpolHoraN)/len(interpolHoraN)
