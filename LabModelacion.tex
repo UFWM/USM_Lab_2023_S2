@@ -139,7 +139,7 @@
 \title{\textbf{\textcolor{blue}{MAT282 \textthreequartersemdash\ Laboratorio de Modelaci\'on }}\color{gray} \\ Optimizaci\'on y visualizaci\'on de la planificaci\'on \'optima de una red el\'ectrica de tres nodos a lo largo de un d\'ia}
 \author{\begin{tabular}{rl}
 		\textbf{Profesor:} & Julio Deride.\\
-		\textbf{Especialista:} & Nicol\'as Hernandez. \\
+		\textbf{Especialista:} & Nicol\'as Hern\'andez. \\
 		\textbf{Alumnos:} & Vicente Moreno, \\
 		& Martina Blanco.
 \end{tabular}}
@@ -167,17 +167,16 @@
 	
 	El objetivo principal de este trabajo es modelar la red el\'ectrica chilena a lo largo de un d\'ia, para obtener una planificaci\'on a realizar para satisfacer las demandas al menor costo posible. Para esto, se consideraron como los tres agentes principales en la red el\'ectrica chilena el Norte, Centro y Sur de Chile, donde cada una de estas zonas se le asignaron producci\'ones y demandas de energ\'ia el\'ectrica basados en datos reales. Un factor considerado en este trabajo son las diversas tecnolog\'ias productoras de energía presentes en cada una de estas zonas. Adem\'as, se diferenciaron las tecnolog\'ias presentes en cada zona de acuerdo al recurso medioambiental que utilizan para generar energ\'ia el\'ectrica, donde distinguimos las tecnolog\'ias solares, en base de carb\'on y en base de gas.
 	
-	Para lograr este objetivo, se desarroll\'o un c\'odigo en Python que resuelve este problema y entrega, mediante gr\'aficos y datos, informaci\'on relevante para la planificaci\'on \'optima de la red durante el d\'ia. Este c\'odigo esta basado en un algoritmo que fue modelado matemáticamente, y demostrado a ser un algoritmo muy r\'apido que encuentra una soluci\'on \'optima de este problema. Para poder aplicar este modelo a este algoritmo, se asumi\'o linealidad de las funciones de costo y de las p\'erdidas en cada flujo. Adem\'as, se modelaron diversos factores basados en datos p\'ublicos de la red el\'ectrica chilena, tales como: los costos de producir energ\'ia, las tecnolog\'ias productoras de energ\'ia, las pérdidas sujetas a cada flujo, y las demandas y capacidad de producción en cada zona.
+	Para lograr este objetivo, se desarroll\'o un c\'odigo en Python que resuelve este problema y entrega, mediante gr\'aficos y datos, informaci\'on relevante para la planificaci\'on \'optima de la red durante el d\'ia. Este c\'odigo esta basado en un algoritmo que fue modelado matemáticamente, y demostrado a ser un algoritmo muy r\'apido que encuentra una soluci\'on \'optima de este problema. Para poder aplicar este modelo a este algoritmo, se asumi\'o linealidad en trozos de las funciones de costo y de las p\'erdidas en cada flujo. Adem\'as, se modelaron diversos factores basados en datos p\'ublicos de la red el\'ectrica chilena, tales como: los costos de producir energ\'ia, las tecnolog\'ias productoras de energ\'ia, las pérdidas sujetas a cada flujo, y las demandas y capacidad de producción en cada zona.
 	
-	La motivación para el desarrollo de este trabajo es la visualizaci\'on de la información sobre la producción y la demanda de la energía eléctrica, y el an\'alisis que es posible extraer de las soluciones gr\'aficas de este problema. Además, aunque este trabajo est\'a centrado en analizar la red el\'ectrica chilena, este trabajo es aplicable para cualquier red el\'ectrica de tres nodos. El c\'odigo en Python creado en este trabajo considera la posibilidad de ser aplicado en otros contextos, y trata de facilitar el uso de modelos distintos al que fue considerado en este trabajo.
+	Con este c\'odigo y modelo, se realiz\'o una simulaci\'on de la red el\'ectrica chilena a lo largo de un d\'ia, resolviendo la problem\'atica cada 5 minutos desde las 0:00 hasta las 23:55. Los resultados del modelamiento se acercan al comportamiento de la vida real de esta red, como los flujos principales utilizados y las zonas con mayor tendencia a recibir y/o enviar energ\'ia. Adem\'as, por el enfoque en implementar el algoritmo previamente mencionado, el programa logra construir la planificaci\'on a lo largo del d\'ia y entregar datos num\'ericos casi instant\'aneamente.
 	
-	\textbf{Comparaci\'on con la literatura:} En el art\'iculo \textit{Estudio de Problemas de Optimizaci\'on y Equilibrio sobre una Red de Producci\'on El\'ectrica}, se estudia la red el\'ectrica que se plantea en este trabajo y se plantea el algoritmo ocupado en este proyecto, tambi\'en basandose en la red el\'ectrica chilena. Adem\'as, este art\'iculo profundiza en variantes del problema de tres nodos, a\~{n}adiendo nodos satelitales a los tres nodos principales, tambi\'en describiendo un algoritmo de resolucion general para estos problemas.
+	La motivación para el desarrollo de este trabajo es la visualizaci\'on de la información sobre la producción y la demanda de la energía eléctrica, y el an\'alisis que es posible extraer de las soluciones gr\'aficas de este problema. Además, aunque este trabajo est\'a centrado en analizar la red el\'ectrica chilena, es aplicable para cualquier red el\'ectrica de tres nodos. El c\'odigo en Python creado en este trabajo considera la posibilidad de ser aplicado en otros contextos, y trata de facilitar el uso de modelos distintos al considerado.
 	
-	Los datos para modelar las demandas en cada zona, el aporte de cada tecnolog\'ia en cada zona y las funciones de costo est\'an basadas en un ejemplo explicito de la red el\'ectrica chilena del art\'iculo \textit{Pollution Regulation for Electricity Generators in a Transmission Network}, donde se estudia el problema de la red el\'ectrica como un juego estoc\'astico diferencial.
+	\textbf{Comparaci\'on con la literatura:} En la tesis \textit{Estudio de Problemas de Optimizaci\'on y Equilibrio sobre una Red de Producci\'on El\'ectrica}, se estudia la red el\'ectrica que se plantea en este trabajo y se plantea el algoritmo ocupado en este proyecto, tambi\'en basandose en la red el\'ectrica chilena. Adem\'as, la tesis profundiza en variantes del problema de tres nodos, a\~{n}adiendo nodos satelitales a los tres nodos principales, tambi\'en describiendo un algoritmo de resolucion general para estos problemas.
+	
+	Los datos para modelar las demandas en cada zona, el aporte de cada tecnolog\'ia en cada zona y las funciones de costo est\'an basadas en un ejemplo explicito de la red el\'ectrica chilena del art\'iculo \textit{Pollution Regulation for Electricity Generators in a Transmission Network}, donde se estudia el problema de la red el\'ectrica como un juego estoc\'astico diferencial de Stackelberg en tiempo continuo.
 
-	
-	\newpage
-	
 	\section{Teor\'ia matem\'atica del problema}
 	\subsection{Definici\'on matem\'atica del problema}
 	
@@ -187,21 +186,19 @@
 	
 	\hspace{1cm} Las variables que se quieren obtener para resolver este problema son la producci\'on en cada nodo \(i\in I\), y los flujos de energ\'ia que transmitir entre nodos para cada conexi\'on \(j\in E\). Estas variables ser\'an \(q_i\) y \(\phi_j\) respectivamente, y la agrupaci\'on de estos se denotar\'a \((q,\phi)\). En el grafo, se puede asociar directamente a \(q_i\) con su nodo respectivo y a \(\phi_j\) a su arco respectivo.
 	
-	\hspace{1cm} Finalmente, se necesitan funciones que representen el costo de producci\'on y p\'erdida de env\'io. Primero, para cada nodo \(i\in I\) se define como el \textbf{costo asociado a la producci\'on de energ\'ia en un nodo} como \(\operatorname{p}_i:[0,\infty)\to[0,\infty)\). Esta funci\'on recibe una producci\'on \(q_i\) y entrega un valor monetario asociado. Adem\'as, se define la \textbf{funci\'on de p\'erdida} como \(\operatorname{r}:[0,\infty)\to[0,\infty)\), que recibe un flujo \(\phi_j\) y devuelve un valor menor a este, representando la energ\'ia perdida en el flujo.
+	\hspace{1cm} Finalmente, se necesitan funciones que representen el costo de producci\'on y p\'erdida de env\'io. Primero, para cada nodo \(i\in I\) se define como el \textbf{costo asociado a la producci\'on de energ\'ia en un nodo} como \(\operatorname{c}_i:[0,\infty)\to[0,\infty)\). Esta funci\'on recibe una producci\'on \(q_i\) y entrega un valor monetario asociado. Adem\'as, se define la \textbf{funci\'on de p\'erdida} como \(\operatorname{r}:[0,\infty)\to[0,\infty)\), que recibe un flujo \(\phi_j\) y devuelve un valor menor a este, representando la energ\'ia perdida en el flujo.
 	
 	\hspace{1cm} Con estas definiciones, es posible construir el problema de optimizaci\'on de producci\'on en una red el\'ectrica al menor costo posible. Como funci\'on objetivo se tendr\'a la minimizaci\'on de la suma de los costos asociados a la producci\'on, para obtener el menor costo posible a lo largo de todas las zonas. Para las restricciones de este problema, hay que asegurar que las demandas sean satisfechas en cada nodo y que las variables est\'en en su rango adecuado. Las variables de producci\'on en cada nodo \(q_i\) no deben sobrepasar el l\'imite de producc\'ion de energ\'ia \(Q_i\). Adem\'as, las variables de producci\'on \(q_i\) y las variables de flujo \(\phi_j\) deben ser no negativas, dada su naturaleza.
 	
 	\hspace{1cm} Para que las demandas sean satisfechas, hay que asegurarse que la energ\'ia neta en cada nodo resulte igual a su demanda. La energ\'ia neta que tiene cada nodo estar\'a dada por su producci\'on interna, sumado con todos los flujos entrantes (menos la energ\'ia perdida en el flujo), restado con los flujos salientes de energ\'ia. As\'i, el problema general de producci\'on en una red el\'ectrica se puede representar como el siguiente sistema de optimizaci\'on:
 	
 	\begin{equation*}\begin{aligned}
-		\min_{(q,\phi)} \quad & \sum_{i\in I}\operatorname{p}_i(q_i) \\
+		\min_{(q,\phi)} \quad & \sum_{i\in I}\operatorname{c}_i(q_i) \\
 		\textrm{s.a.} \quad & q_i+\sum_{e\in E_i}\left(\phi_e-\operatorname{r}(\phi_e)\right)-\sum_{s\in S_i}\phi_s=D_i, & & \forall i \in I \\
 		& q_i\in[0,Q_i], & & \forall i \in I \\
 		& \phi_j\geq0, & & \forall j \in E
 	\end{aligned}\end{equation*}
 	
-	\newpage
-
 	\subsection{El problema en contexto}	
 	\hspace{1cm} En el caso de Chile, se pueden distinguir tres zonas principales productoras de energ\'ia. Estas zonas son el Norte, Centro y Sur de Chile, y cada una de estas zonas tiene distintas capacidades de producci\'on y distintas demandas diarias. Una labor importante del ISO es manejar la producci\'on y flujo de energ\'ias entre estas tres zonas diariamente, asegurandose de satisfacer las demandas de cada zona al menor costo posible.
 	
@@ -240,18 +237,16 @@
 	
 	\hspace{1cm} En general, la energ\'ia solar es m\'as econ\'omica que la energ\'ia a carb\'on, y la energ\'ia a carb\'on es m\'as econ\'omica que la energ\'ia a gas. Adem\'as, una vez instalada la tecnolog\'ia solar, el costo de producir este tipo de energ\'ia es b\'asicamente nulo.
 	
-	\hspace{1cm} Un factor importante que considerar es que la energ\'ia solar no emite gases contaminantes al medioambiente, mientras que la energ\'ia a carb\'on y a gas si emiten. La contaminaci\'on emitida tiene un costo asociado medioambiental, proporcional al volumen de estos gases. La energ\'ia a gas tiende a emitir menos gases contaminantes que la energ\'ia a carb\'on, pero el costo medioambiental no es suficientemente grande como para volver la energ\'ia a g\'as m\'as econ\'omica que la energ\'ia a carb\'on.
+	\hspace{1cm} Un factor importante que considerar es que la energ\'ia solar no emite gases contaminantes al medioambiente, mientras que la energ\'ia a carb\'on y a gas emiten. La contaminaci\'on emitida tiene un costo asociado medioambiental, proporcional al volumen de estos gases. La energ\'ia a gas tiende a emitir menos gases contaminantes que la energ\'ia a carb\'on, pero el costo medioambiental no es suficientemente grande como para volver la energ\'ia a g\'as m\'as econ\'omica que la energ\'ia a carb\'on.
 	
-	\hspace{1cm} Estas tecnolog\'ias juegan un rol principal en la producci\'on de energ\'ia en cada zona. Dado que es m\'as eficiente econ\'omicamente usar las tecnolog\'ias con menor costo primero, siempre se termina agotando totalmente la energ\'ia solar, luego la energ\'ia a carb\'on y finalmente la energ\'ia a gas (mientras sea necesario producir esta energ\'ia). Esto resulta bastante \'util, puesto que ayuda a comprender mejor la forma que tendr\'ia la funci\'on asociada al costo de producci\'on \(\operatorname{p}_i,\,\forall i\in I\).
-	
-	\newpage
+	\hspace{1cm} Estas tecnolog\'ias juegan un rol principal en la producci\'on de energ\'ia en cada zona. Dado que es m\'as eficiente econ\'omicamente usar las tecnolog\'ias con menor costo primero, siempre se termina agotando totalmente la energ\'ia solar, luego la energ\'ia a carb\'on y finalmente la energ\'ia a gas (mientras sea necesario producir esta energ\'ia). Esto resulta bastante \'util, puesto que ayuda a comprender mejor la forma que tendr\'ia la funci\'on asociada al costo de producci\'on \(\operatorname{c}_i,\,\forall i\in I\).
 	
 	\subsection{Simplificaciones a considerar en el modelo}
 	\hspace{1cm} Para poder manejar este problema, se asumi\'o que las funciones de costo de producci\'on en cada nodo son estrictamente crecientes. Esto resulta intuitivo, puesto que uno esperar\'ia que producir m\'as energ\'ia implicar\'ia un mayor costo. Adem\'as, se consider\'o que la funci\'on de p\'erdida al enviar energ\'ia de un nodo a otro es una funci\'on lineal, que se le puede asociar un factor de p\'erdida \(r\in[0,1]\). Este factor representar\'ia la fracci\'on de la energ\'ia total que se pierde al transmitir energ\'ia de una zona a otra, para todo posible flujo direccional en el grafo.
 	
-	\hspace{1cm} Con estas consideraciones, se puede aplicar el modelo te\'orico del problema de producci\'on en una red el\'ectrica a este contexto con estas simplificaciones. As\'i, el sistema de optimizaci\'on de la red chilena puede modelarse con la siguiente ecuaci\'on de optimizaci\'on:
+	\hspace{1cm} Con estas consideraciones, se puede aplicar el modelo te\'orico del problema de producci\'on en una red el\'ectrica a este contexto con estas simplificaciones. As\'i, el sistema de optimizaci\'on de la red chilena puede modelarse con el siguiente problema de optimizaci\'on:
 	\begin{equation*}\begin{aligned}
-				\min_{(q,\phi)} \quad & \operatorname{p}_N(q_N)+\operatorname{p}_S(q_S)+\operatorname{p}_C(q_C) \\
+				\min_{(q,\phi)} \quad & \operatorname{c}_N(q_N)+\operatorname{c}_S(q_S)+\operatorname{c}_C(q_C) \\
 				\textrm{s.a.} \quad & q_N+(1-r)(\phi_{SN}+\phi_{CN})-(\phi_{NS}+\phi_{NC})=D_N, \\
 				\quad & q_S+(1-r)(\phi_{NS}+\phi_{CS})-(\phi_{SN}+\phi_{SC})=D_S, \\
 				\quad & q_C+(1-r)(\phi_{SC}+\phi_{NC})-(\phi_{CS}+\phi_{CN})=D_C, \\
@@ -260,9 +255,10 @@
 				& q_C\in[0,Q_C], \\
 				& \phi_{NS},\phi_{SN},\phi_{SC},\phi_{CS},\phi_{NC},\phi_{CN}\geq0.
 		\end{aligned}\end{equation*}
-	\hspace{1cm} Donde las variables \(q_N,q_S,q_C\) representan la cantidad de energ\'ia m\'inima a producir en cada nodo, y las variables \(\phi_{NS},\phi_{SN},\phi_{SC},\phi_{CS},\phi_{NC},\phi_{CN}\) representan la energ\'ia a enviar entre zonas para satisfacer las demandas. Notemos que este sistema de optimizaci\'on depende de nueve variables.
+	\hspace{1cm} Donde las variables \(q_N,q_S,q_C\) representan la cantidad de energ\'ia a producir en cada nodo, y las variables \(\phi_{NS},\phi_{SN},\phi_{SC},\phi_{CS},\phi_{NC},\phi_{CN}\) representan la energ\'ia a enviar entre zonas para satisfacer las demandas. Notemos que este problema de optimizaci\'on depende de nueve variables.
 	
-	\hspace{1cm} En la siguiente secci\'on se va a analizar la forma de las soluciones de este sistema de optimizaci\'on, para simplificarlo. En las siguientes secciones, este trabajo menciona como \textbf{"problema P"} a este problema de optimizaci\'on reducido que representa el problema de producci\'on en la red el\'ectrica chilena.
+	\hspace{1cm} En la siguiente secci\'on se va a analizar la forma de las soluciones de este problema de optimizaci\'on, para simplificarlo. En las siguientes secciones, este trabajo menciona como \textbf{"problema P"} a este problema de optimizaci\'on reducido que representa el problema de producci\'on en la red el\'ectrica chilena.
+	
 	\newpage
 	
 	\section{An\'alisis del problema simplificado}
@@ -281,7 +277,7 @@
 		\item [(ii)] \textbf{Soluci\'on:} Diremos que un punto factible \((q,\phi)\) es soluci\'on de P si minimiza la funci\'on objetivo:
 		\begin{equation*}
 			\begin{aligned}
-				\forall (q',\phi') \text{ punto factible, }\sum_{i\in I}\operatorname{p}_i(q_i)\leq\sum_{i\in I}\operatorname{p}_i(q'_i)
+				\forall (q',\phi') \text{ punto factible, }\sum_{i\in I}\operatorname{c}_i(q_i)\leq\sum_{i\in I}\operatorname{c}_i(q'_i)
 			\end{aligned}
 		\end{equation*}
 	\end{enumerate}
@@ -291,7 +287,7 @@
 	\vspace{0.4cm}
 	\begin{proposicion}{1} Sean \((q^1,\phi^1)\) y \((q^2,\phi^2)\) puntos factibles de P tales que \(q^1_i\leq q^2_i,\, \forall i \in I\). Si existe \(j \in I\) tal que \(q^1_j< q^2_j\), entonces \((q^2,\phi^2)\) no es soluci\'on de P.
 		
-		\textbf{Dem:} Como para todo \(i \in I\) cada funci\'on \(\operatorname{p}_i\) es estrictamente creciente, tendremos que \(\operatorname{p}_i(q^1_i)\leq\operatorname{p}_i(q^2_i)\) y \(\operatorname{p}_j(q^1_j)<\operatorname{p}_j(q^2_j)\). Entonces \(\sum_{i\in I}\operatorname{p}_i(q^1_i)<\sum_{i\in I}\operatorname{p}_i(q^2_i)\implies(q^2,\phi^2)\) no es soluci\'on de P.\qed
+		\textbf{Dem:} Como para todo \(i \in I\) cada funci\'on \(\operatorname{c}_i\) es estrictamente creciente, tendremos que \(\operatorname{c}_i(q^1_i)\leq\operatorname{c}_i(q^2_i)\) y \(\operatorname{c}_j(q^1_j)<\operatorname{c}_j(q^2_j)\). Entonces \(\sum_{i\in I}\operatorname{c}_i(q^1_i)<\sum_{i\in I}\operatorname{c}_i(q^2_i)\implies(q^2,\phi^2)\) no es soluci\'on de P.\qed
 	\end{proposicion}
 	
 	\vspace{0.4cm}
@@ -323,7 +319,7 @@
 	
 	\vspace{0.4cm}
 	
-	\hspace{1cm} Con estos se han simplificado bastante las configuraciones de las soluciones del problema P. Toda soluci\'on de P cumplir\'a que entre cada par de nodos solo existe un flujo dirijido. Esto reduce efectivamente la cantidad de flujos a calcular a la mitad, y como se est\'a estudiando el caso particular de 3 nodos, tendremos que existen 8 grafos distintos que representan las orientaciones de los flujos de las posibles soluciones. Si \(I=\{N,S,C\}\), se pueden visualiza esto con los siguientes grafos:
+	\hspace{1cm} Con estos se han simplificado bastante las configuraciones de las soluciones del problema P. Toda soluci\'on de P cumplir\'a que entre cada par de nodos solo existe un flujo dirigido. Esto reduce efectivamente la cantidad de flujos a calcular a la mitad, y como se est\'a estudiando el caso particular de 3 nodos, tendremos que existen 8 grafos distintos que representan las orientaciones de los flujos de las posibles soluciones. Si \(I=\{N,S,C\}\), se puede visualizar esto con los siguientes grafos:
 	
 	\begin{center}
 		\begin{tikzpicture}
@@ -464,10 +460,10 @@
 		\end{array}
 	\end{equation*}
 	
-	\hspace{1cm}Como ahora se tienen dos sub-problemas \(P_1\) y \(P_2\) que en conjunto forman al problema P, se podr\'an analizar cada uno de ellos de forma separada, considerando las definici\'ones de \(\operatorname{ALG}_1\) y \(\operatorname{ALG}_2\) mencionadas anteriormente. Las formas explicitas de \(P_1\) y \(P_2\) se pueden ver en las ecuaciones 3.1 y 3.2 respectivamente en el anexo de este informe.
+	\hspace{1cm}Como ahora se tienen dos sub-problemas \(P_1\) y \(P_2\) que en conjunto forman al problema P, se podr\'an analizar cada uno de ellos de forma separada, considerando las definiciones de \(\operatorname{ALG}_1\) y \(\operatorname{ALG}_2\) mencionadas anteriormente. Las formas expl\'icitas de \(P_1\) y \(P_2\) se pueden ver en las ecuaciones 3.1 y 3.2 respectivamente en el anexo de este informe.
 	
 	\subsection{Forma de las soluciones (parte 2)}
-	\hspace{1cm} Para el subproblema \(P_1\) es claro ver el fen\'omeno del \textbf{"flujo circular"}. En esta situaci\'on, no se tiene el fen\'omeno del env\'io m\'utuo directamente. Eso si, al utilizar todos los flujos, se tendr\'ia que cada nodo entrega y recibe energ\'ia en una cadena, similar al env\'io mutuo. Esto intuitivamente tambi\'en no es \'optimo, puesto que siempre habr\'a energ\'ia neta que fluye entre nodos y no se utiliza en ellos. Esto se captura con la siguiente proposici\'on:
+	\hspace{1cm} Para el subproblema \(P_1\) es claro ver el fen\'omeno del \textbf{"flujo circular"}. En esta situaci\'on, no se tiene el fen\'omeno del env\'io m\'utuo directamente. Eso si, al utilizar todos los flujos, se tendr\'ia que cada nodo entrega y recibe energ\'ia en una cadena, similar al env\'io mutuo. Esto intuitivamente tampoco es \'optimo, puesto que siempre habr\'a energ\'ia neta que fluye entre nodos y no se utiliza en ellos. Esto se captura con la siguiente proposici\'on:
 	\vspace{0.4cm}
 	
 	\begin{proposicion}{3} Sea \((q,\phi)\) un punto factible de \(P_1\) tal que \(\forall e \in E,\, \phi_e>0\). Entonces, \((q,\phi)\) no es soluci\'on de P.
@@ -479,7 +475,7 @@
 				& \phi'_{NS}=\phi_{NS}-\delta & \hspace{1cm} & \phi'_{SN}=\phi_{SN}-\delta & \hspace{1cm} & \phi'_{CN}=\phi_{CN}-\delta
 			\end{aligned}
 		\end{equation*}
-		Podemos escoger \(\alpha\) suficientemente peque\~{n}o para que cumpla con las restricci\'ones de \(P_1\). As\'i, \((q',\phi')\) es un punto factible de \(P_1\) , y por la Proposici\'on 1, tendremos que \((q,\phi)\) no es soluci\'on de \(P_1\). \qed
+		Podemos escoger \(\alpha\) suficientemente peque\~{n}o para que cumpla con las restricciones de \(P_1\). As\'i, \((q',\phi')\) es un punto factible de \(P_1\) , y por la Proposici\'on 1, tendremos que \((q,\phi)\) no es soluci\'on de \(P_1\). \qed
 	\end{proposicion}
 	
 	\hspace{1cm}Esta proposici\'on es muy importante, puesto que implica que toda soluci\'on de \(P_1\) debe tener un flujo nulo. Esto significa que, para el grafo 1, una soluci\'on de \(P_1\) tiene la forma:
@@ -515,7 +511,7 @@
 		\end{tikzpicture}
 	\end{center}
 	
-	\hspace{1cm} Podemos notar que cada uno de los grafos 1.1-1.2-1.3 son similares bajo rotaciones. Adem\'as, el grafo 1.1 es id\'entico al grafo 2, si esque el flujo \(\phi_{NC}=0\). Esto significa que, todo grafo de una soluci\'on de \(P_1\) calza con un grafo de \(P_2\).
+	\hspace{1cm} Podemos notar que cada uno de los grafos 1.1-1.2-1.3 son similares bajo rotaciones. Adem\'as, el grafo 1.1 es id\'entico al grafo 2, si el flujo \(\phi_{NC}=0\). Esto significa que, todo grafo de una soluci\'on de \(P_1\) calza con un grafo de \(P_2\).
 	
 	\hspace{1cm} Como los problemas \(P_1\) y \(P_2\) tienen la misma funci\'on a optimizar y las restricci\'ones son las mismas bajo la condici\'on que un flujo sea igual a 0, \(P_1\) es un subproblema de \(P_2\). Esto significa que \(\operatorname{ALG}_1\) est\'a contenido en \(\operatorname{ALG}_2\), y por tanto, solo necesitamos \(P_2\) para resolver P. Finalmente, como el problema P es la uni\'on de \(P_1\) y \(P_2\), el problema \(P_2\) es equivalente al problema P. Por lo tanto, \(\operatorname{ALG}_2\) resuelve al problema P. 
 	
@@ -526,7 +522,7 @@
 	
 	\hspace{1cm} Notemos el caso particular del Sur. Si el Sur no puede cubrir su propia demanda, es intuitivo que no deber\'ia enviar energ\'ia al Centro y deber\'ia recibir energ\'ia del Norte. Asi mismo, si el Sur puede cubrir su propia demanda, puede enviar energia al centro y no necesitar\'ia recibir energ\'ia del Norte. 
 	
-	\hspace{1cm} Esta intuici\'on significar\'ia que un punto factible donde se use el flujo Norte-Sur y el flujo Sur-Centro al mismo tiempo no tiene sentido. Se podr\'ia argumentar que al ocupar estos dos flujos al mismo tiempo, se env\'ia de forma neta energ\'ia del Norte al Centro sujeto a una doble p\'erdida. Eso si, ese flujo neto pudo haber enviado directamente del Norte al Centro con una sola p\'erdida de energ\'ia. La siguiente proposici\'on deja en evidencia esta intuici\'on:
+	\hspace{1cm} Esta intuici\'on significar\'ia que un punto factible donde se use el flujo Norte-Sur y el flujo Sur-Centro al mismo tiempo no ser\'ia \'optimo. Se podr\'ia argumentar que al ocupar estos dos flujos al mismo tiempo, se env\'ia de forma neta energ\'ia del Norte al Centro sujeto a una doble p\'erdida. Eso si, ese flujo neto pudo haber enviado directamente del Norte al Centro con una sola p\'erdida de energ\'ia. La siguiente proposici\'on deja en evidencia esta intuici\'on:
 	\vspace{0.4cm}
 	
 	\begin{proposicion}{4} Sea \((q,\phi)\) un punto factible de \(P_2\) tal que \(\phi_{NS},\phi_{SC}>0\). Entonces, \((q,\phi)\) no es soluci\'on de P.
@@ -598,7 +594,7 @@
 	\end{center}
 	\vspace{0.4cm}
 	
-	\hspace{1cm} Notemos que los grafos 2.1, 2.2 y 2.5 son similares bajo reflexiones y rotaciones. Esto dejar\'ia solamente cuatro grafos intrinsicamente distintos los unos de los otros, y todas estas orientaciones ser\'ian posibles orientaciones de flujos de soluciones para P. As\'i, se tendr\'a que cualquier soluci\'on de P necesariamente debe tener la orientaci\'on de flujo (similar bajo rotaciones y reflexiones) a alguno de los siguientes 4 grafos:
+	\hspace{1cm} Notemos que los grafos 2.1, 2.2 y 2.5 son similares bajo reflexiones y rotaciones. Esto dejar\'ia solamente cuatro grafos intr\'insicamente distintos los unos de los otros, y todas estas orientaciones ser\'ian posibles orientaciones de flujos de soluciones para P. As\'i, se tendr\'a que cualquier soluci\'on de P necesariamente debe tener la orientaci\'on de flujo (similar bajo rotaciones y reflexiones) a alguno de los siguientes 4 grafos:
 	\vspace{0.4cm}
 	
 	\begin{center}
@@ -645,20 +641,20 @@
 
 	\hspace{1cm} Previamente se habl\'o de una forma de resolver el problema P, que involucraba resolver permutaciones de un subproblema que llamamos \(P_2\), y as\'i se encontraba la soluci\'on \'optima del problema P. Afortunadamente, se demostr\'o y explicit\'o este mismo algoritmo en una tesis relacionada con este problema.
 	
-	\hspace{1cm} En la Tesis de Mariano Vazquez, sobre el Estudio de Problemas de Optimizaci\'on y Equilibrio sobre una Red de Producci\'on El\'ectrica, se estudia el problema P que se estudi\'o en este proyecto. Se describe de forma explicita, en el cap\'itulo 2 de la tesis, un algoritmo para resolver el problema P de forma r\'apida. Este algoritmo garantiza obtener una soluci\'on obteniendo puntos factibles del subproblema \(P_2\) en distintas configuraciones, para posteriormente comparar los puntos factibles y encontrar la soluci\'on con menor valor de funci\'on objetivo. 
+	\hspace{1cm} En la Tesis de Mariano Vazquez, sobre el Estudio de Problemas de Optimizaci\'on y Equilibrio sobre una Red de Producci\'on El\'ectrica, se estudia el problema P que se estudi\'o en este proyecto. Se describe de forma expl\'icita, en el cap\'itulo 2 de la tesis, un algoritmo para resolver el problema P de forma r\'apida. Este algoritmo garantiza obtener una soluci\'on obteniendo puntos factibles del subproblema \(P_2\) en distintas configuraciones, para posteriormente comparar los puntos factibles y encontrar la soluci\'on con menor valor de funci\'on objetivo. 
 	
 	\hspace{1cm} En este proyecto se consider\'o este algoritmo y se implement\'o en el lenguaje de programaci\'on Python, para resolver el caso particular del problema de producci\'on de la red el\'ectrica de Chile. Este c\'odigo fue programado con la intenci\'on de crear una interpolaci\'on de datos y simular este problema a lo largo de un d\'ia. En cada instante de tiempo considerado en la interpolaci\'on, resuelve el problema mediante el algoritmo previamente mencionado. Despu\'es, recopila la informaci\'on y entrega datos y gr\'aficos relevantes al problema, como las producci\'ones, los flujos y valores de la funci\'on objetivo. Dado que el algoritmo que se consider\'o est\'a caracterizado por su rapidez de encontrar la soluci\'on \'optima, es posible obtener resultados de la planificaci\'on diaria casi instantaneamente, que no se obtendr\'ian si se usara un solver t\'ipico de programaci\'on lineal para resolver toda la interpolaci\'on.
 	
-	\hspace{1cm} La forma que fue confeccionado el c\'odigo es tal que uno puede ingresar una interpolaci\'on de datos, y uno pueda escalar la parametrizaci\'on para que se ajuste a un intervalo de tiempo arbitrario. Adem\'as, es posible ajustar la interpolaci\'on tal que tome un valor promedio que se escoja. As\'i, se puede definir una interpolaci\'on y el programa la escala para que tenga sentido dentro del contexto que queremos que resuelva. Un repositorio de este c\'odigo se encuentra en el anexo de este trabajo.
+	\hspace{1cm} El c\'odigo fue confeccionado tal que uno puede ingresar una interpolaci\'on de datos y escalar la parametrizaci\'on para que se ajuste a un intervalo de tiempo arbitrario. Adem\'as, es posible ajustar la interpolaci\'on tal que tome un valor promedio que se escoja. As\'i, se puede definir una interpolaci\'on y el programa la escala para que tenga sentido dentro del contexto que queremos que resuelva. Un repositorio de este c\'odigo se encuentra en el anexo de este trabajo.
 	
 	\subsection{Modelamiento de la red el\'ectrica de Chile a lo largo de un d\'ia}
 	
-	\hspace{1cm} Para poder usar el algoritmo, y por tanto, el c\'odigo, se necesitan modelar: las demandas a lo largo de un periodo de tiempo, las producciones de cada tecnolog\'ia en cada nodo, el costo de producir energ\'ia con cada tipo de tecnolog\'ia y la p\'erdida de energ\'ia debido al uso de flujos. En este proyecto inspiramos en datos publicos con componente aleatoria, referenciados en la bibliograf\'ia de este informe y descrito en detalle abajo:
+	\hspace{1cm} Para poder usar el algoritmo, y por tanto, el c\'odigo, se necesitan modelar: las demandas a lo largo de un periodo de tiempo, las producciones de cada tecnolog\'ia en cada nodo, el costo de producir energ\'ia con cada tipo de tecnolog\'ia y la p\'erdida de energ\'ia debido al uso de flujos. En este proyecto inspiramos en datos p\'ublicos con componente aleatoria, referenciados en la bibliograf\'ia de este informe y descrito en detalle abajo:
 	
 	\begin{itemize}
 		\item [(i)] \underline{Demandas}: Antes de modelar las demandas a lo largo de un d\'ia, es necesario conocer la forma de este tipo de curvas. Este comportamiento se relaciona con el comportamiendo de la sociedad en el transcurso de un d\'ia, y por tanto, resulta intuitivo explicar la forma que deben tener.
 		
-		 \hspace{1cm} Entre las 18:00h y 20:00h (las horas "peak") las curvas alcanzan un m\'aximo de demanda (a la hora que la gente sale del trabajo), y empiezan a decaer hasta el f\'in del d\'ia. En la madrugada, sigue decayendo hasta alcanzar un m\'inimo entre las 3:00h y 5:00h (puesto que la gente se va a dormir), y luego empieza a subir, aumentando dr\'asticamente entre las 6:00h hasta las 8:00h (a la hora que la gente se despierta). Despu\'es, la demanda se mantiene alta hasta las horas "peak", y se repite el c\'iclo.
+		 \hspace{1cm} Entre las 18:00 y 20:00 (las horas "peak") las curvas alcanzan un m\'aximo de demanda (la hora que la gente sale del trabajo), y empiezan a decaer hasta el f\'in del d\'ia. En la madrugada, sigue decayendo hasta alcanzar un m\'inimo entre las 3:00 y 5:00 (puesto que la gente se va a dormir), y luego empieza a subir, aumentando dr\'asticamente entre las 6:00 hasta las 8:00 (la hora que la gente se despierta). Despu\'es, la demanda se mantiene alta hasta las horas "peak", y se repite el c\'iclo.
 		
 		 \hspace{1cm} Considerando esto, se crearon tres curvas distintas de producci\'on el\'ectrica para cada zona. Se seleccionaron datos cada hora (como discutimos previamente) durante el periodo de un d\'ia, que fueron interpolados linealmente tal que se tuviera un dato cada 5 minutos. A cada uno de estos puntos se le a\~{n}adi\'o un valor aleatorio que var\'ia entre \(-2\%\) y \(2\%\) del promedio de la curva interpolada, para representar una variaci\'on estandar.
 		
@@ -668,7 +664,7 @@
 			\includegraphics[scale=0.57]{Fig1_Demandas.png}
 		\end{center}
 		
-		\item [(ii)] \underline{Producci\'on}: Para los l\'imites de producci\'on de cada zona, se consider\'o que la capacidad de producci\'on m\'axima en el Norte, Sur y Centro spn 6000, 2000 y 12000 [MW/h], respectivamente. Para cada una de estas zonas, el aporte de las tecnolog\'ias solares, de carbon y de gas en cada zona a la producci\'on total se consider\'o respectivamente como:
+		\item [(ii)] \underline{Producci\'on}: Para los l\'imites de producci\'on de cada zona, se consider\'o que la capacidad de producci\'on m\'axima en el Norte, Sur y Centro son 6000, 2000 y 12000 [MW/h], respectivamente. Para cada una de estas zonas, el aporte de las tecnolog\'ias solares, de carb\'on y de gas en cada zona a la producci\'on total se consider\'o respectivamente como:
 		\begin{equation*}\begin{array}{c|c|c|c}
 			& \text{Solar} & \text{Carb\'on} & \text{Gas} \\ \hline
 			\text{Norte} & 30\% & 30\% & 40\% \\
@@ -676,20 +672,20 @@
 			\text{Centro} & 20\% & 10\% & 70\% \\
 		\end{array}\end{equation*}
 		
-		\item [(iii)] \underline{Costos}: Para modelar el costo de prodcci\'on en cada nodo, se puede considerar que el costo por cada megawatt de energ\'ia de las tecnolog\'ias solares, de carb\'on y de gas son iguales en cada zona, son respectivamente \(\$0,\,\$40,\,\$80\). As\'i, utilizando los l\'imites de producc\'ion en cada zona y el aporte de cada tecnolog\'ia, es posible encontrar expresiones explicitas para cada funci\'on de costo en cada zona, mostradas abajo: 
+		\item [(iii)] \underline{Costos}: Para modelar el costo de producci\'on en cada nodo, se puede considerar que el costo por cada megawatt de energ\'ia de las tecnolog\'ias solares, de carb\'on y de gas son iguales en cada zona, son respectivamente \(\$0,\,\$40,\,\$80\). As\'i, utilizando los l\'imites de producc\'ion en cada zona y el aporte de cada tecnolog\'ia, es posible encontrar expresiones explicitas para cada funci\'on de costo en cada zona, mostradas abajo: 
 		
 		\begin{equation*}\begin{aligned}
-			\operatorname{p}_N(q)&=\left\{\begin{array}{cl}
+			\operatorname{c}_N(q)&=\left\{\begin{array}{cl}
 					0 & ,\text{ si } 0\leq q<1800 \\
 					40\cdot(q-1800) & ,\text{ si } 1800\leq q<3600 \\
 					80\cdot(q-3600)+72000 & ,\text{ si } 3600\leq q\leq6000
 				\end{array}\right. \\
-			\operatorname{p}_S(q)&=\left\{\begin{array}{cl}
+			\operatorname{c}_S(q)&=\left\{\begin{array}{cl}
 					0 & ,\text{ si } 0\leq q<200 \\
 					40\cdot(q-200) & ,\text{ si } 200\leq q<1000 \\
 					80\cdot(q-1000)+32000 & ,\text{ si } 1000\leq q\leq2000
 				\end{array}\right. \\
-			\operatorname{p}_C(q)&=\left\{\begin{array}{cl}
+			\operatorname{c}_C(q)&=\left\{\begin{array}{cl}
 					0 & ,\text{ si } 0\leq q<2400 \\
 					40\cdot(q-2400) & ,\text{ si } 2400\leq q<3600 \\
 					80\cdot(q-3600)+48000 & ,\text{ si } 3600\leq q\leq12000
@@ -703,14 +699,14 @@
 	
 	\hspace{1cm} Gracias al modelamiento matemático y el trabajo en el programa en Python, el c\'odigo entrega seis gr\'aficos, enumerados abajo, y datos num\'ericos 
 	
-	\hspace{1cm} Los primeros tres gr\'aficos que genera el c\'odigo son Figura1, Figura2 y Figura3 respectivamente, de acuerdo al \'orden que aparecen abajo de este p\'arrafo. Estos tres grafos son las soluciones del problema P a lo largo del tiempo, que muestran respectivamente: las producci\'ones a realizar en cada nodo, los flujos a realizar en cada arco y el valor de la funci\'on objetivo. En cada uno de estos grafos adem\'as se representa el l\'imite de producci\'on de cada zona con lineas punteadas.
+	\hspace{1cm} Los primeros tres gr\'aficos que genera el c\'odigo son Figura 1, Figura 2 y Figura 3 respectivamente, de acuerdo al \'orden que aparecen abajo de este p\'arrafo. Estos tres grafos son las soluciones del problema P a lo largo del tiempo, que muestran respectivamente: las producciones a realizar en cada nodo, los flujos a realizar en cada arco y el valor de la funci\'on objetivo. En cada uno de estos grafos adem\'as se representa el l\'imite de producci\'on de cada zona con lineas punteadas.
 	
 	\includegraphics[scale=0.36]{Fig2_Producciones.png}
 	\includegraphics[scale=0.36]{Fig3_Flujos.png}
 	\includegraphics[scale=0.36]{Fig4_Funcion.png}
 	\begin{center}Figura 1: Producciones\hspace{2.5cm}Figura 2: Flujos\hspace{2.7cm}Figura 3: Funci\'on\hspace{0.5cm}\, \end{center}
 	
-	\hspace{1cm} Adem\'as, el c\'odigo entrega estos tres grafos, que llamaremos Figura4.1, Figura4.2 y Figura4.3, que muestran a lo largo del tiempo la demanda y la energ\'ia producida, en el Norte, Sur y Centro respectivamente. Adem\'as, cada uno de estos grafos muestra para cada nodo los l\'imites de producci\'on de energ\'ia acumulada para cada tecnolog\'ia.
+	\hspace{1cm} Adem\'as, el c\'odigo entrega estos tres grafos, que llamaremos Figura 4.1, Figura 4.2 y Figura 4.3, que muestran a lo largo del tiempo la demanda y la energ\'ia producida, en el Norte, Sur y Centro respectivamente. Adem\'as, cada uno de estos grafos muestra para cada nodo los l\'imites de producci\'on de energ\'ia acumulada para cada tecnolog\'ia.
 	
 	\includegraphics[scale=0.36]{Fig2.1_Norte.png}
 	\includegraphics[scale=0.36]{Fig2.2_Sur.png}
@@ -744,37 +740,37 @@
 	
 	\hspace{1cm} Por este fen\'omeno se puede ver que hay intervalos donde en alguna zona la producci\'on se mantiene constante, puesto que la tecnolog\'ia est\'a agotando una tecnolog\'ia econ\'omica para enviar esa energ\'ia a una zona que lo necesite, en vez de tener que producir directamente energ\'ia m\'as costosa. Un ejemplo claro de esto es la producci\'on del Norte, que durante una gran parte del d\'ia se mantiene constante en su l\'imite de producci\'on de energ\'ia a carb\'on, decidiendo enviar la energ\'ia sobrante al Sur y al Centro, considerando las p\'erdidas de env\'io.
 	
-	\hspace{1cm} Es importante notar que a lo largo del d\'ia; el Norte abasteci\'o al Sur y al Centro, el Sur abasteci\'o al Centro y el Centro no abasteci\'o al Norte ni al Sur. Esto es lo mismo que decir que solo se utilizaron los flujos NS, SC y NC, similares a los del subproblema \(P_2\) que analizamos en la Secci\'on 3.2. Adem\'as, como fue demostrado previamente, las soluciones \'optimas de este modelo no usan mas de dos flujos a la vez, y a lo mas se utilizaron dos flujos actuando al mismo tiempo. La forma que tienen los flujos, si son vistos como grafos dirigidos, calzan bajo similaridades a los grafos \(S_1, S_2, S_3\) y \(S_4\) mencionados al final de la Secci\'on 3.4.
+	\hspace{1cm} Es importante notar que a lo largo del d\'ia el Norte abasteci\'o al Sur y al Centro, el Sur abasteci\'o al Centro y el Centro no abasteci\'o al Norte ni al Sur. Esto es lo mismo que decir que solo se utilizaron los flujos NS, SC y NC, similares a los del subproblema \(P_2\) que analizamos en la Secci\'on 3.2. Adem\'as, como fue demostrado previamente, las soluciones \'optimas de este modelo no usan mas de dos flujos a la vez, y a lo m\'as se utilizaron dos flujos actuando al mismo tiempo. La forma que tienen los flujos, si son vistos como grafos dirigidos, calzan bajo similaridades a los grafos \(S_1, S_2, S_3\) y \(S_4\) mencionados al final de la Secci\'on 3.4.
 	
-	\hspace{1cm} Adem\'as, es importante notar que los cambios m\'as bruscos en la Figura 2 ocurren en los momentos donde var\'ia m\'as la demanda, es decir, entre las 6:00h y las 8:00h, y las 20:00h hasta las 24:00h. El algoritmo encontr\'o \'optimo que el Norte sobre-produzca energ\'ia puesto a su capacidad alta de producci\'on a carb\'on, dado que este l\'imite de producci\'on siempre est\'a por arriba de su propia demanda. Por la demanda energ\'etica tan alta del Centro, durante el d\'ia su demanda est\'a en casi todo momento por sobre lo que puede producir con carb\'on, y entonces, siempre resulta m\'as econ\'omico que reciba energ\'ia (mientras se pueda).
+	\hspace{1cm} Adem\'as, es importante notar que los cambios m\'as bruscos en la Figura 2 ocurren en los momentos donde var\'ia m\'as la demanda, es decir, entre las 6:00 y las 8:00, y las 20:00 hasta las 24:00. El algoritmo encontr\'o \'optimo que el Norte sobre-produzca energ\'ia puesto a su capacidad alta de producci\'on a carb\'on, dado que este l\'imite de producci\'on siempre est\'a por arriba de su propia demanda. Por la demanda energ\'etica tan alta del Centro, durante el d\'ia su demanda est\'a en casi todo momento por sobre lo que puede producir con carb\'on, y entonces, siempre resulta m\'as econ\'omico que reciba energ\'ia (mientras se pueda).
 	
 	\subsubsection{Planificaci\'on de la red el\'ectrica en el transcurso de un d\'ia}
 	\hspace{1cm} Con estos resultados, se pueden analizar los distintos fen\'omenos que ocurren a lo largo del d\'ia. Si se analizan las producciones y de los flujos, es posible extraer conclusiones con respecto al comportamiento \'optimo de la red el\'ectrica. A lo largo de esta secci\'on, se detallar\'a la cronolog\'ia de distintos eventos importantes que planifica el c\'odigo a lo largo del d\'ia, y se explicar\'an distintos comportamientos de las curvas obtenidas en los gr\'aficos.
 	
-	\hspace{1cm} Se puede notar que, antes de la rampa de demanda de la ma\~{n}ana, el sistema se encontraba en total equilibrio usando energ\'ia solar y usando gran parte de la energ\'ia a carb\'on (entre las 1:00h y las 4:30h). Durante este peri\'odo la soluci\'on \'optima es no mandar flujos, puesto que las demandas de todas las zonas necesitan un gran porcentaje de energ\'ia de carb\'on, y ninguna zona necesita tanta demanda como para necesitar producir gas. Este equilibrio se rompe cerca de las 5:00h, cuando el Centro empieza a necesitar m\'as demanda de la que puede satisfacer sin energ\'ia a gas. Como la energ\'ia a gas es bastante mas costosa que la energ\'ia a carb\'on, el programa encontr\'o \'optimo que el Norte y el Sur generaran parte de la energ\'ia a carb\'on sobrante y enviaran flujo al Centro.
+	\hspace{1cm} Se puede notar que, antes de la rampa de demanda de la ma\~{n}ana, el sistema se encontraba en total equilibrio usando energ\'ia solar y usando gran parte de la energ\'ia a carb\'on (entre las 1:00 y las 4:30h). Durante este periodo la soluci\'on \'optima es no mandar flujos, puesto que las demandas de todas las zonas necesitan un gran porcentaje de energ\'ia de carb\'on, y ninguna zona necesita tanta demanda como para necesitar producir gas. Este equilibrio se rompe cerca de las 5:00, cuando el Centro empieza a necesitar m\'as demanda de la que puede satisfacer sin energ\'ia a gas. Como la energ\'ia a gas es bastante m\'as costosa que la energ\'ia a carb\'on, el programa encontr\'o \'optimo que el Norte y el Sur generaran parte de la energ\'ia a carb\'on sobrante y enviaran flujo al Centro.
 	
-	\hspace{1cm} Eventualmente, cerca de las 6:00h, las demandas del Sur y del Centro son tan altas (para su propia producci\'on) que no pueden ser totalmente satisfechas con la energ\'ia a carb\'on. Entonces, estas dos zonas empezaron a producir Gas, y el Sur para no perder energ\'ia producida con Gas, detuvo su flujo al Centro. Entretanto, el Norte todav\'ia puede abastecerse con su tecnolog\'ia a carb\'on, y encuentra \'optimo enviar flujo al Sur antes del Norte.
+	\hspace{1cm} Eventualmente, cerca de las 6:00, las demandas del Sur y del Centro son tan altas (para su propia producci\'on) que no pueden ser totalmente satisfechas con la energ\'ia a carb\'on. Entonces, estas dos zonas empezaron a producir Gas, y el Sur para no perder energ\'ia producida con Gas, detuvo su flujo al Centro. Entretanto, el Norte todav\'ia puede abastecerse con su tecnolog\'ia a carb\'on, y encuentra \'optimo enviar flujo al Sur antes del Norte.
 	
-	\hspace{1cm} El Centro tiene tanta demanda entre las 7:00h y las 21:00h que encuentra \'optimo satisfacer su propia demanda y nunca enviar flujo a ninguna zona. El Sur se aprovecha de la energ\'ia a carb\'on sobrante del Norte y puede producir ligeramente bajo su demanda gran parte del tiempo. El Norte, al tener una buena capacidad de producci\'on a carb\'on, puede satisfacerse a si misma sin ning\'un problema solo generando carb\'on, exceptuando entre las 18:00h y las 20:00h, es decir, la hora "peak".
+	\hspace{1cm} El Centro tiene tanta demanda entre las 7:00 y las 21:00 que es \'optimo satisfacer su propia demanda y nunca enviar flujo a ninguna zona. El Sur se aprovecha de la energ\'ia a carb\'on sobrante del Norte y puede producir ligeramente bajo su demanda gran parte del tiempo. El Norte, al tener una buena capacidad de producci\'on a carb\'on, puede satisfacerse a si misma sin ning\'un problema solo generando carb\'on, exceptuando entre las 18:00 y las 20:00, es decir, la hora "peak".
 	
-	\hspace{1cm} Durante la hora "peak", todas las demandas son m\'as altas que la capacidad de producci\'on en cada zona con tecnolog\'ia solar y a carb\'on, y entonces, todas se ven forzadas a agotar totalmente estas tecnolog\'ias y empezar a agotar la energ\'ia a gas. Durante este periodo, se alcanza un \'ultimo equilibrio de flujos, donde la demanda es tan alta y ya se agotaron todas las tecnolog\'ias econ\'omicas que es m\'as \'optimo que cada zona produzca su propia demanda.
+	\hspace{1cm} Durante la hora "peak", todas las demandas son m\'as altas que la capacidad de producci\'on en cada zona con tecnolog\'ia solar y a carb\'on, y entonces, todas se ven forzadas a agotar totalmente estas tecnolog\'ias y empezar a agotar la energ\'ia a gas. Durante este periodo, se alcanza un \'ultimo equilibrio de flujos, donde la demanda es tan alta y ya se agotaron todas las tecnolog\'ias econ\'omicas que es \'optimo que cada zona satisfaga por s\'i misma su propia demanda.
 	
-	\hspace{1cm} Cuando termina la hora "peak", no se necesita producir tanta energ\'ia a gas como antes, y las tecnolog\'ias vuelven a tener el comportamiento similar a como se describi\'o anteriormente. Esto ocurre hasta que llegan a un momento cerca de las 23:00h donde la demanda es suficientemente baja como para abastecer a todas las zonas sin necesitar usar energ\'ia a gas.
+	\hspace{1cm} Cuando termina la hora "peak", no se necesita producir tanta energ\'ia a gas como antes, y las tecnolog\'ias vuelven a tener el comportamiento similar a como se describi\'o anteriormente. Esto ocurre hasta que llegan a un momento cerca de las 23:00 donde la demanda es suficientemente baja como para abastecer a todas las zonas sin necesitar usar energ\'ia a gas.
 
 	\section{Conclusiones y trabajo futuro}
 	\hspace{1cm} Tras el desarrollo de lo planteado a lo largo de este informe, se lograron cumplir los objetivos principales mencionados en la introducci\'on. Se logr\'o modelar la red el\'ectrica chilena, y se logr\'o construir un c\'odigo en Python para obtener una planificaci\'on diaria para minimizar el costo total de la red el\'ectrica. Adem\'as, es posible extraer datos cuantitativos importantes, como la cantidad total de energ\'ia que producir y enviar entre el Norte, Sur y Centro de Chile, y el costo total de la red al usar esta planificaci\'on. La visualizaci\'on de las soluciones tambi\'en resulto efectiva al momento de entender la forma de la soluci\'on \'optima, y ayuda a comprender mejor este tipo de modelos en acci\'on.
 	
-	\hspace{1cm} El desarrollo hecho para poder usar el algoritmo del problema simplificado hace que la b\'usqueda de soluciones sea mucho mas \'optima. Si hubieramos ocupado un solver de programaci\'on lineal en el problema a resolver sin las soluciones, se hubiera demorado bastante el c\'odigo en poder resolver todos los problemas de optimizaci\'on a solucionar durante todo el d\'ia. Con este algoritmo basado en las reducciones de complejidad del problema, la resoluci\'on del problema es b\'asicamente inmediata. Dado esto, es f\'acil para el c\'odigo acomodarlo para modelaciones m\'as intensivas y obtener resultados r\'apidos que no se pueden garantizar al usar un solver tradicional, puesto que este algoritmo se basa en propiedades de redes el\'ectricas que son intr\'insicas de este problema en espec\'ifico.
+	\hspace{1cm} El desarrollo hecho para poder usar el algoritmo del problema simplificado hace que la b\'usqueda de soluciones sea mucho mas eficiente. Si hubi\'eramos ocupado un solver de programaci\'on lineal en el problema a resolver sin las soluciones, se hubiera demorado bastante el c\'odigo en poder resolver todos los problemas de optimizaci\'on a solucionar durante todo el d\'ia. Con este algoritmo basado en las reducciones de complejidad del problema, la resoluci\'on del problema es b\'asicamente inmediata. Dado esto, es f\'acil para el c\'odigo acomodarlo para modelaciones m\'as intensivas y obtener resultados r\'apidos que no se pueden garantizar al usar un solver tradicional, puesto que este algoritmo se basa en propiedades de redes el\'ectricas que son intr\'insicas de este problema en espec\'ifico.
 	
-	\hspace{1cm} A lo largo del d\'ia, se pueden identificar distintas tendencias en cada uno de los nodos de la red el\'ectrica chilena, y se puede decir que cada nodo "cumpli\'o un rol" dentro de la red el\'ectrica. El Norte tiene el rol de satisfacer las demandas del Sur y el Centro debido a su gran producci\'on, y el Centro tiene el rol de recibir energ\'ia del Norte y del Sur debido a su gran demanda. El Sur var\'ia su comportamiento de acuerdo a su propia demanda, mientras la pueda satisfacer de forma c\'omoda puede enviarle energ\'ia al Centro, pero si su demanda es demasiado grande le pide ayuda al Norte para satisfacerla. Esto se evidencia por el uso de los flujos Norte-Sur, Sur-Centro y Norte-Centro en la soluci\'on \'optima a lo largo de todo el d\'ia, y al no ocupar los otros flujos en ning\'un momento.
+	\hspace{1cm} A lo largo del d\'ia, se pueden identificar distintas tendencias en cada uno de los nodos de la red el\'ectrica chilena, y se puede decir que cada nodo "cumpli\'o un rol" dentro de la red el\'ectrica. El Norte tiene el rol de satisfacer las demandas del Sur y el Centro debido a su gran producci\'on, y el Centro tiene el rol de recibir energ\'ia del Norte y del Sur debido a su gran demanda. El Sur var\'ia su comportamiento de acuerdo a su propia demanda: mientras la pueda satisfacer de forma c\'omoda puede enviarle energ\'ia al Centro, pero si su demanda es demasiado grande le pide ayuda al Norte para satisfacerla. Esto se evidencia por el uso de los flujos Norte-Sur, Sur-Centro y Norte-Centro en la soluci\'on \'optima a lo largo de todo el d\'ia, y al no ocupar los otros flujos en ning\'un momento.
 	
-	\hspace{1cm} Es importante notar que, aunque este trabajo se concentro en una red el\'ectrica a lo largo de un d\'ia, este trabajo podr\'ia seguir siendo aplicable a redes el\'ectricas de otros pa\'ises y/o en m\'argenes de tiempo distintos a los de un d\'ia, cambiando las funciones interpoladas y trasladando el sistema de forma adecuada. Eso si, la cronolog\'ia analizada en este proyecto solamente tiene sentido en el contexto de un d\'ia, y no ser\'ia necesariamente aplicable en escalas de tiempo mayores. Es decir, el an\'alisis cualitativo del comportamiento de las soluciones durante un d\'ia no necesariamente se traduce bien a escalas temporales menores (en una hora espec\'ifica) o en escalas temporales mayores (una semana, un mes, un a\~{n}o, etc.).
+	\hspace{1cm} Es importante notar que, aunque este trabajo se concentr\'o en una red el\'ectrica a lo largo de un d\'ia, este trabajo podr\'ia seguir siendo aplicable a redes el\'ectricas de otros pa\'ises y/o en m\'argenes de tiempo distintos a los de un d\'ia, cambiando las funciones interpoladas y trasladando el sistema de forma adecuada. Eso s\'i, la cronolog\'ia analizada en este proyecto solamente tiene sentido en el contexto de un d\'ia, y no ser\'ia necesariamente aplicable en escalas de tiempo mayores. Es decir, el an\'alisis cualitativo del comportamiento de las soluciones durante un d\'ia no necesariamente se traduce bien a escalas temporales menores (en una hora espec\'ifica) o en escalas temporales mayores (una semana, un mes, un a\~{n}o, etc.).
 	
-	\hspace{1cm} Para trabajos futuros relacionados, se podr\'ian considerar diversos factores que cambiar y/o mejorar. Entre posibles aristas a los cuales llevar este trabajo, se podr\'ia considerar el impacto medioambiental de la planificaci\'on diaria que es \'optima econ\'omicamente, pero no necesariamente ecol\'ogicamente. Se podr\'ia incluir un costo medioambiental a la funci\'on objetivo, que est\'e dado por el vol\'umen de contaminaci\'on emitida al producir energ\'ia de carb\'on y de gas (puesto que la energ\'ia solar no es contaminante). De acuerdo a la forma y la importancia que se le asigne a esta funci\'on, ser\'a posible encontrar un equilibrio entre la forma m\'as econ\'omica de manejar la red el\'ectrica y en minimizar los da\~{n}os al medioambiente.
+	\hspace{1cm} Para trabajos futuros relacionados, se podr\'ian considerar diversos factores que cambiar y/o mejorar. Entre posibles aristas a los cuales llevar este trabajo, se podr\'ia considerar el impacto medioambiental de la planificaci\'on diaria que es \'optima econ\'omicamente, pero no necesariamente ecol\'ogicamente. Se podr\'ia incluir un costo medioambiental a la funci\'on objetivo, que est\'e dado por el volumen de contaminaci\'on emitida al producir energ\'ia de carb\'on y de gas (puesto que la energ\'ia solar no es contaminante). De acuerdo a la forma y la importancia que se le asigne a esta funci\'on, ser\'a posible encontrar un equilibrio entre la forma m\'as econ\'omica de manejar la red el\'ectrica y en minimizar los da\~{n}os al medioambiente.
 	
-	\hspace{1cm} Adem\'as, se podr\'ia mejorar el modelo de la red el\'ectrica chilena utilizado en este trabajo. Se consider\'o constante el l\'imite de producci\'on, cuando en la vida real la capacidad de energ\'ia solar depende del clima, puesto que depende de que el cielo est\'e despejado para maximizar su producci\'on. Por otro lado, el utilizar un tipo de tecnolog\'ia podr\'ia considerar un costo base para iniciar el equipo para producir energ\'ia, que no fue considerado en la funci\'on de costo de este trabajo. A\'un m\'as, al hacer funcionar cada tecnolog\'ia, puede que necesite un tiempo para estar funcionando a m\'axima capacidad, y esto implicar\'ia una forma no lineal a trozos de la funci\'on de costo de producci\'on.
+	\hspace{1cm} Adem\'as, se podr\'ia mejorar el modelo de la red el\'ectrica chilena utilizado en este trabajo. Se consider\'o constante el l\'imite de producci\'on, cuando en la vida real la capacidad de energ\'ia solar depende del clima, puesto que depende de que el cielo est\'e despejado para maximizar su producci\'on. Esto se traduce en problemas de optimizaci\'on estoc\'astica. Por otro lado, el utilizar un tipo de tecnolog\'ia podr\'ia considerar un costo base para iniciar el equipo para producir energ\'ia, que no fue considerado en la funci\'on de costo de este trabajo. A\'un m\'as, al hacer funcionar cada tecnolog\'ia, puede que necesite un tiempo para estar funcionando a m\'axima capacidad, y esto implicar\'ia una forma no lineal a trozos de la funci\'on de costo de producci\'on.
 	
-	\hspace{1cm} Con respecto al algoritmo considerado en este proyecto, solamente sirve para redes de tres nodos. Eso si, dentro del art\'iculo que especifica este algoritmo, tambi\'en expresan algoritmos para redes el\'ectricas similares, pero con nodos satelitales a\~{n}adidos. Ser\'ia posible construir un c\'odigo distinto que considere estas redes con m\'as de tres nodos basados en estos algoritmos, para lograr una mejor modelaci\'on en zonas que no sean f\'acilmente reducibles a tres nodos.
+	\hspace{1cm} Con respecto al algoritmo considerado en este proyecto, solamente sirve para redes de tres nodos. Eso s\'i, dentro de la tesis que especifica este algoritmo, tambi\'en expresan algoritmos para redes el\'ectricas similares, pero con nodos satelitales a\~{n}adidos. Ser\'ia posible construir un c\'odigo distinto que considere estas redes con m\'as de tres nodos basados en estos algoritmos, para lograr una mejor modelaci\'on en zonas que no sean f\'acilmente reducibles a tres nodos.
 	
 	\hspace{1cm} Un detalle importante dentro de todo este trabajo es que una planificaci\'on \'optima hoy en d\'ia no necesariamente ser\'ia posible de mantener a lo largo del tiempo, debido a los cambios en regularizaci\'ones de distintas tecnolog\'ias por el cambio clim\'atico. Un ejemplo claro ser\'ian las tecnolog\'ias en base a carb\'on y gas que, aunque sean eficientes para su costo y sean tecnolog\'ias principales de producci\'on hoy en d\'ia, resultan muy contaminantes al medioambiente. Debido a esto, es posible que estas tecnolog\'ias sean restringidas para cuidar a la atm\'osfera, y se necesiten usar tecnolog\'ias m\'as ecol\'ogicas pero m\'as costosas.
 	
@@ -788,21 +784,21 @@
 		
 		\item [\textbf{01/09:}] Presentaci\'on del proyecto en mas detalle y de los intereses del especialista para modelar. Se empez\'o a investigar sobre el modelamiento matem\'atico del problema, y a comprender el modelo reducido del problema.
 		
-		Se convers\'o sobre la forma que deber\'ia tener una soluci\'on del problema. Una soluci\'on no puede contener un flujo mutuo entre nodos, y por tanto, las soluciones al problema tienen un patr\'on gr\'afico que podemos usar para reducir el problema. En base de esto, se nos pidi\'o encontrar todos los grafos de una soluci\'on del problema reducido, ver que grafos son similares entre si, y plantear matem\'aticamente el problema para cada familia de grafos similares.
+		Se convers\'o sobre la forma que deber\'ia tener una soluci\'on del problema. Una soluci\'on no puede contener un flujo m\'utuo entre nodos, y por tanto, las soluciones al problema tienen un patr\'on gr\'afico que podemos usar para reducir el problema. En base a esto, se nos pidi\'o encontrar todos los grafos de una soluci\'on del problema reducido, ver qu\'e grafos son similares entre s\'i, y plantear matem\'aticamente el problema para cada familia de grafos similares.
 		
-		\item [\textbf{15/09:}] Se presentaron dudas sobre el modelamiento matem\'atico del problema, especificamente sobre la funci\'on objetivo. Nuestro especialista nos gui\'o a reducir a\'un mas los sub-problemas, consideran- do fen\'omenos como el flujo circular o del doble env\'io, y plantearlos matem\'aticamente. Adem\'as, se habl\'o de la posibilidad que un problema pueda estar contenido en otro, y de un posible algoritmo para resolver los sub-problemas, y mediante simetr\'ias, resolver el problema completo. 
+		\item [\textbf{15/09:}] Se presentaron dudas sobre el modelamiento matem\'atico del problema, espec\'ificamente sobre la funci\'on objetivo. Nuestro especialista nos gui\'o a reducir a\'un ma\'s los sub-problemas, consideran- do fen\'omenos como el flujo circular o del doble env\'io, y plantearlos matem\'aticamente. Adem\'as, se habl\'o de la posibilidad que un problema pueda estar contenido en otro, y de un posible algoritmo para resolver los sub-problemas, y mediante simetr\'ias, resolver el problema completo. 
 		
-		\item [\textbf{10/10:}] Se presenta un archivo en LateX que muestra, mediante demostraciones matem\'aticas, la posibi- lidad de un algoritmo que resuelva un problema reducido del problema original. Adem\'as, si este algoritmo es de existir, puede ser iterado con distintas configuraciones para obtener distintas soluciones, y al considerar la soluci\'on m\'as \'optima de cada configuraci\'on, habremos obtenido una soluci\'on \'optima del problema original.
+		\item [\textbf{10/10:}] Se presenta un archivo en LateX que muestra, mediante demostraciones matem\'aticas, la posibi- lidad de un algoritmo que resuelva un problema reducido del problema original. Adem\'as, si este algoritmo es de existir, puede ser iterado con distintas configuraciones para obtener distintas soluciones, y al considerar la soluci\'on \'optima de cada configuraci\'on, habremos obtenido una soluci\'on \'optima del problema original.
 		
-		Con este avance, nuestro especialista nos proporcion\'o con una tesis relacionada con el problema de producci\'on en una red el\'ectrica, que contiene la forma explicita del algoritmo previamente mencionado. Se nos pidi\'o leer y comprender las partes de la tesis relacionadas con este proyecto, para posteriormente crear un c\'odigo en base al algoritmo que resuelva este mismo problema.
+		Con este avance, nuestro especialista nos proporcion\'o una tesis relacionada con el problema de producci\'on en una red el\'ectrica, que contiene la forma explicita del algoritmo previamente mencionado. Se nos pidi\'o leer y comprender las partes de la tesis relacionadas con este proyecto, para posteriormente crear un c\'odigo en base al algoritmo que resuelva este mismo problema.
 		
-		\item [\textbf{19/10:}] Se presentan dudas sobre la implementaci\'on del c\'odigo y que lenguaje de programaci\'on utilizar. Se empieza a construir el c\'odigo, y se realizan extensivas pruebas verificando todos los ejemplos proporcionados en la tesis y ejemplos proporcionados directamente por nuestro especialista.
+		\item [\textbf{19/10:}] Se presentan dudas sobre la implementaci\'on del c\'odigo y que lenguaje utilizar. Se empieza a construir el c\'odigo, y se realizan extensivas pruebas verificando todos los ejemplos proporcionados en la tesis y ejemplos proporcionados directamente por nuestro especialista.
 		
-		Se construye el c\'odigo para que pueda ser iterado multiples veces con distintas demandas iniciales, para modelar las producciones y flujos de energ\'ia a lo largo de una jornada. Adem\'as, se trabaja en la visualizaci\'on de los datos mediante gr\'aficos.
+		Se construye el c\'odigo para que pueda ser iterado m\'ultiples veces con distintas demandas iniciales, para modelar las producciones y flujos de energ\'ia a lo largo de una jornada. Adem\'as, se trabaja en la visualizaci\'on de los datos mediante gr\'aficos.
 		
-		\item[\textbf{10/11:}] Se hacen las ultimas revisiones del c\'odigo. Se trabaja principalmente en la visualizaci\'on de los datos y en facilitar el uso del c\'odigo para usar condiciones iniciales distintas. 
+		\item[\textbf{10/11:}] Se hacen las \'ultimas revisiones del c\'odigo. Se trabaja principalmente en la visualizaci\'on de los datos y en facilitar el uso del c\'odigo para usar condiciones iniciales distintas. 
 		
-		\item[\textbf{20/11:}] Se consulta con el especialista sobre los \'ultimos detalles del proyecto, principalmente sobre la estructura del informe, el res\'umen en ingl\'es del proyecto y la presentaci\'on. Se hablan los \'ultimos detalles que corregir para finalizar el proyecto.
+		\item[\textbf{20/11:}] Se consulta con el especialista sobre los \'ultimos detalles del proyecto, principalmente sobre la estructura del informe, el resumen en ingl\'es del proyecto y la presentaci\'on. Se hablan los \'ultimos detalles que corregir para finalizar el proyecto.
 	\end{enumerate}
 	
 	\newpage
@@ -812,7 +808,7 @@
 	\item \textbf{P\'ag 9, Secci\'on 3.3:} Formas explicitas de los subproblemas \(P_1\) y \(P_2\), respectivamente:
 	\begin{equation*}\begin{aligned}
 			& \text{\hspace{1cm}Problema \(P_1\)}& & \text{\hspace{1cm}Problema \(P_2\)}  \\
-			\min_{(q,\phi)} \quad & \operatorname{p}_N(q_N)+\operatorname{p}_S(q_S)+\operatorname{p}_C(q_C) & \hspace{1cm} \min_{(q,\phi)} \quad & \operatorname{p}_N(q_N)+\operatorname{p}_S(q_S)+\operatorname{p}_C(q_C) \\
+			\min_{(q,\phi)} \quad & \operatorname{c}_N(q_N)+\operatorname{c}_S(q_S)+\operatorname{c}_C(q_C) & \hspace{1cm} \min_{(q,\phi)} \quad & \operatorname{c}_N(q_N)+\operatorname{c}_S(q_S)+\operatorname{c}_C(q_C) \\
 			\textrm{s.a.} \quad & q_N+(1-r)\phi_{CN}-\phi_{NS}=D_N & \textrm{s.a.} \quad & q_N-\phi_{NS}-\phi_{NC}=D_N \\
 			& q_S+(1-r)\phi_{NS}-\phi_{SC}=D_S & & q_S+(1-r)\phi_{NS}-\phi_{SC}=D_S \\
 			& q_C+(1-r)\phi_{SC}-\phi_{CN}=D_C & & q_C+(1-r)(\phi_{SC}+\phi_{NC})=D_C \\
@@ -821,7 +817,7 @@
 			& q_C\in[0,Q_C] & & q_C\in[0,Q_C] \\
 			& \phi_{NS},\phi_{SC},\phi_{CN}\geq0 & & \phi_{NS},\phi_{SC},\phi_{NC}\geq0 
 	\end{aligned}\end{equation*}
-		\item \textbf{P\'ag 12, Secci\'on 4.1:} Repositorio GitHub del c\'odigo del proyecto: \href{https://github.com/UFWM/USM_Lab_2023_S2/blob/main/LabModelacion.py}{link}
+		\item \textbf{P\'ag 12, Secci\'on 4.1:} Repositorio GitHub del c\'odigo del proyecto: \href{https://github.com/UFWM/USM_Lab_2023_S2/tree/main}{link}
 	\end{itemize}
 	
 	\section{Bibliograf\'ia}
